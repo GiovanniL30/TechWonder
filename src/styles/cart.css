@@ -1,0 +1,126 @@
+.cart-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-grid {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cart-item-container {
+  display: grid;
+  grid-template-columns: 100px 180px repeat(2, auto);
+  align-items: center;
+}
+
+@media screen and (min-width: 700px) {
+  .cart-item-container {
+    grid-template-columns: 100px 260px repeat(2, auto);
+  }
+}
+
+.cart-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(211, 211, 211, 0.272);
+  border-radius: 20px;
+}
+
+.cart-item-container img {
+  width: 100%;
+
+  height: 100%;
+  object-fit: contain;
+
+  padding: 0.5rem;
+  display: flex;
+}
+
+.wrapper-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cart-item-info {
+  font-weight: bold;
+  margin-left: 1.5rem;
+  font-size: 0.9em;
+}
+
+.cart-update-quantity {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.cart-update-quantity button {
+  border: none;
+  background-color: rgba(211, 211, 211, 0.055);
+  font-size: 1.2em;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cart-update-quantity div {
+  color: rgb(96, 96, 96);
+  font-weight: bold;
+}
+
+.total-price {
+  font-weight: bold;
+  color: rgb(18, 17, 17);
+  margin-left: 2rem;
+}
+
+.remove-cart-item-btn {
+  margin-left: 2rem;
+  border: none;
+  background: none;
+  color: rgb(18, 17, 17);
+  font-size: 0.7em;
+  cursor: pointer;
+  font-weight: bold;
+}
+.total-cart-info div {
+  margin-top: 2rem;
+}
+
+.total-cart-info div h2 {
+  font-weight: 500;
+}
+
+.total-cart-info div p {
+  font-size: 0.8em;
+  color: lightgray;
+}
+
+@media screen and (min-width: 900px) {
+  .cart-page-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+  }
+
+  .cart-item-container {
+    grid-template-columns: 100px 350px repeat(2, auto);
+  }
+
+  .wrapper-cart {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 200px 1fr;
+  }
+}

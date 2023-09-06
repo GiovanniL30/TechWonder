@@ -1,0 +1,24 @@
+.header-swiper-container {
+  height: 500px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.055);
+}
+
+.slide-container-header {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.swiper-slide img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  padding: 4rem;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.item-image:hover {
+  transform: scale(1.3);
+}
