@@ -1,22 +1,22 @@
-import React, { useState, createContext, useContext } from 'react'
-import data from '../data/data'
-import { useLocalStorage } from '../hooks/useLocalStorage'
+import React, { useState, createContext, useContext } from "react";
+import data from "../data/data";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
-const ShopContext = createContext()
+const ShopContext = createContext();
 
 export function useShopContext() {
-  return useContext(ShopContext)
+  return useContext(ShopContext);
 }
 
 export default function ProductContext({ children }) {
-  const [products, setProducts] = useState(data)
-  const [cart, setCart] = useLocalStorage('cart-item', [])
-  const cartQuantity = cart.length
+  const [products, setProducts] = useState(data);
+  const [cart, setCart] = useLocalStorage("cart-item", []);
+  const cartQuantity = cart.length;
 
   function removeCart(id) {
     setCart((prevCart) => {
-      return prevCart.filter((item) => item.id != id)
-    })
+      return prevCart.filter((item) => item.id != id);
+    });
   }
 
   function updateCartQuantity(id, quantity) {
@@ -24,17 +24,17 @@ export default function ProductContext({ children }) {
       return prevCart.map((cartItem) => {
         if (cartItem.id === id) {
           if (cartItem.quantity == 1 && quantity == -1) {
-            return cartItem
+            return cartItem;
           }
 
           return {
             ...cartItem,
             quantity: cartItem.quantity + quantity,
-          }
+          };
         }
-        return cartItem
-      })
-    })
+        return cartItem;
+      });
+    });
   }
 
   return (
@@ -51,5 +51,5 @@ export default function ProductContext({ children }) {
     >
       {children}
     </ShopContext.Provider>
-  )
+  );
 }
